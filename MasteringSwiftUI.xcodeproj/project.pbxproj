@@ -11,7 +11,7 @@
 		FF527AC82920D6960081E49F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF527AC72920D6960081E49F /* ContentView.swift */; };
 		FF527ACA2920D6970081E49F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF527AC92920D6970081E49F /* Assets.xcassets */; };
 		FF527ACD2920D6970081E49F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF527ACC2920D6970081E49F /* Preview Assets.xcassets */; };
-		FF783CA62920E070000D7EC1 /* ContentViewTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF783CA52920E070000D7EC1 /* ContentViewTwo.swift */; };
+		FF783CA62920E070000D7EC1 /* ContentViewSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF783CA52920E070000D7EC1 /* ContentViewSecond.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +20,7 @@
 		FF527AC72920D6960081E49F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FF527AC92920D6970081E49F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF527ACC2920D6970081E49F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FF783CA52920E070000D7EC1 /* ContentViewTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTwo.swift; sourceTree = "<group>"; };
+		FF783CA52920E070000D7EC1 /* ContentViewSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewSecond.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +55,7 @@
 			children = (
 				FF527AC52920D6960081E49F /* MasteringSwiftUIApp.swift */,
 				FF527AC72920D6960081E49F /* ContentView.swift */,
-				FF783CA52920E070000D7EC1 /* ContentViewTwo.swift */,
+				FF783CA52920E070000D7EC1 /* ContentViewSecond.swift */,
 				FF527AC92920D6970081E49F /* Assets.xcassets */,
 				FF527ACB2920D6970081E49F /* Preview Content */,
 			);
@@ -140,7 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF783CA62920E070000D7EC1 /* ContentViewTwo.swift in Sources */,
+				FF783CA62920E070000D7EC1 /* ContentViewSecond.swift in Sources */,
 				FF527AC82920D6960081E49F /* ContentView.swift in Sources */,
 				FF527AC62920D6960081E49F /* MasteringSwiftUIApp.swift in Sources */,
 			);
