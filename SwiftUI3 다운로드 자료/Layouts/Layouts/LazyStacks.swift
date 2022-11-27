@@ -22,14 +22,20 @@
 //
 
 import SwiftUI
-
+/*
+ Lazy StackView 필요한 시점에 생성한다.
+ StackView 는 모든 뷰를 동시에 생성
+ */
 struct LazyStacks: View {
     var body: some View {
-        HStack {
-            ForEach(1 ..< 101) { num in
-                NumberView(number: num)
+        ScrollView(.horizontal) {
+            LazyHStack {
+                ForEach(1 ..< 101) { num in
+                    NumberView(number: num)
+                }
             }
         }
+        
     }
 }
 

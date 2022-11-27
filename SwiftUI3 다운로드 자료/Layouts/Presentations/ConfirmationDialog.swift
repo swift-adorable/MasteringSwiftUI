@@ -24,20 +24,57 @@
 import SwiftUI
 
 struct ConfirmationDialog_Tutorials: View {
+    
+    @State private var showDialog = false
+    
+    @State private var color = Color.black
+    
     var body: some View {
         VStack {
             Spacer()
             
             Circle()
                 .frame(width: 200, height: 200)
+                .foregroundColor(color)
             
             Spacer()
             
             Button {
-                
+                showDialog = true
             } label: {
                 Text("Select Color")
             }
+            .confirmationDialog("Choice Color", isPresented: $showDialog, presenting: ColorData.samples) { (colors) in
+                
+                ForEach(colors) { item in
+                    Button(item.title) {
+                        color = item.color
+                    }
+                }
+//                Button("Red") {
+//                    color = .red
+//                }
+//                Button("Green") {
+//                    color = .green
+//                }
+//                Button("Blue") {
+//                    color = .blue
+//                }
+//                Button(role: .cancel) {
+//
+//                } label: {
+//                    Text("Cancel")
+//                }
+//                Button(role: .destructive) {
+//                    color = .black
+//                } label: {
+//                    Text("Destructive")
+//                }
+
+            } message: { _ in
+                Text("What do u want color?")
+            }
+
         }
     }
 }

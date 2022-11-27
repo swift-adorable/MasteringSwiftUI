@@ -23,13 +23,23 @@
 import SwiftUI
 
 struct SectionHeaderView: View {
+    let title: String
+    
     var body: some View {
-        Text("Hello, World!")
+        HStack {
+            Text(title)
+                //.foregroundColor(.white)
+                .font(.title3)
+            Spacer()
+        }
+        .padding()
+        .frame(maxWidth: .infinity)
+        //.background(.blue)
     }
 }
 
 struct SectionHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        SectionHeaderView()
+        SectionHeaderView(title: "Hello word!")
     }
 }

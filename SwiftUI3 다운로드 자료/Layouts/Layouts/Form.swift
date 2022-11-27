@@ -31,10 +31,15 @@ struct Form_Tutorials: View {
     @State private var receiveEmail = false
     
     var body: some View {
-        VStack {
-            TextField("Email", text: $email)
-            SecureField("Password", text: $password)
-            TextField("Address", text: $address)
+        Form {
+            
+            Section(content: {
+                TextField("Email", text: $email)
+                SecureField("Password", text: $password)
+                TextField("Address", text: $address)
+            }, header: {
+                SectionHeaderView(title: "Text Input")
+            })
             
             Stepper("Age: \(age)", value: $age)
             Toggle(isOn: $receiveEmail, label: { Text("Receive Email") })

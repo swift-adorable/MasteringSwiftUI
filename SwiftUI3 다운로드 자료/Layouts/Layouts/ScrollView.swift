@@ -25,20 +25,23 @@ import SwiftUI
 
 struct ScrollView_Tutorials: View {
     var body: some View {
-        VStack {
-            EmojiView(emoji: "😀")
-            EmojiView(emoji: "😍")
-            EmojiView(emoji: "😎")
-
-            EmojiView(emoji: "🐶")
-            EmojiView(emoji: "🐱")
-            EmojiView(emoji: "🐯")
-
-            EmojiView(emoji: "🍎")
-            EmojiView(emoji: "🍌")
-            EmojiView(emoji: "🍓")
-        }
-        .frame(maxWidth: .infinity)
+        ScrollView([.horizontal, .vertical]) {
+            BigPhotoView()
+        }.ignoresSafeArea()
+//        VStack {
+//            EmojiView(emoji: "😀")
+//            EmojiView(emoji: "😍")
+//            EmojiView(emoji: "😎")
+//
+//            EmojiView(emoji: "🐶")
+//            EmojiView(emoji: "🐱")
+//            EmojiView(emoji: "🐯")
+//
+//            EmojiView(emoji: "🍎")
+//            EmojiView(emoji: "🍌")
+//            EmojiView(emoji: "🍓")
+//        }
+//        .frame(maxWidth: .infinity)
     }
 }
 

@@ -24,8 +24,27 @@
 import SwiftUI
 
 struct Overlay: View {
+    @State var selected = false
+    
     var body: some View {
         EmojiView(emoji: "😎")
+            .overlay(alignment: .bottomTrailing) {
+                if selected {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundColor(.blue)
+                        .font(.largeTitle)
+                }
+            }
+            .onTapGesture {
+                selected.toggle()
+            }
+        //#2
+//            .overlay {
+//                Image("big-photo").resizable()
+//            }
+        //#1
+            //.overlay(.thickMaterial, in: Circle())
+            //.opacity(0.3)
     }
 }
 
