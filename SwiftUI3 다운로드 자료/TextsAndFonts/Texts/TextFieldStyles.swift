@@ -29,9 +29,24 @@ struct TextFieldStyles: View {
     @State private var favoriteNumber: Int = 0
     
     var body: some View {
-        Form {
+        VStack {
+            
             TextField("Email", text: $email, prompt: Text("Input Email"))
+                .padding()
+                .textFieldStyle(.roundedBorder)
+                .textContentType(.username)
+                .keyboardType(.emailAddress)
+            
             SecureField("Password", text: $password, prompt: Text("Input Password"))
+                .padding()
+                .textFieldStyle(.roundedBorder)
+                .textContentType(.password)
+                //Password Auto Fill
+            
+            TextField("Number", value: $favoriteNumber, format: .number)
+                .padding()
+                .textFieldStyle(.roundedBorder)
+                .keyboardType(.numberPad)
         }
     }
 }

@@ -28,7 +28,18 @@ let longText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
 struct Text_Tutorials: View {
     var body: some View {
         VStack {
-            Text("Hello, World!")
+            Text("Hello")
+                .font(.largeTitle)
+                .foregroundColor(.blue)
+                .background(.gray)
+            Text(verbatim: "Hello")
+            Text(longText)
+                .frame(width: 200) // 프레임 설정
+                .lineLimit(10) // 줄 수 제한
+                //.truncationMode() // 생략 설정?
+                .multilineTextAlignment(.center) //컨텐츠 정렬
+                .lineSpacing(7) // 라인 여백
+            
         }
     }
 }
@@ -37,5 +48,6 @@ struct Text_Previews: PreviewProvider {
     static var previews: some View {
         Text_Tutorials()
             .environment(\.locale, Locale(identifier: "ko_kr"))
+        //Localized String을 제공
     }
 }

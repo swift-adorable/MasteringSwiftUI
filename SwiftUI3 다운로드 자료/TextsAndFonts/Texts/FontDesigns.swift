@@ -30,13 +30,13 @@ struct FontDesigns: View {
                 .font(.largeTitle)
             
             Text("Monospaced")
-                .font(.largeTitle)
+                .font(.system(.largeTitle, design: .monospaced))
             
             Text("Rounded")
-                .font(.largeTitle)
+                .font(.system(.largeTitle, design: .rounded))
             
             Text("Serif")
-                .font(.largeTitle)
+                .font(.system(.largeTitle, design: .serif))
             
         }
     }

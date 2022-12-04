@@ -23,15 +23,52 @@
 
 import SwiftUI
 
+enum FieldType: Hashable {
+    case Email
+    case Password
+}
+
 struct TextField_Tutorials: View {
     @State private var email: String = ""
     @State private var password: String = ""    
     @State private var showJoinAlert = false
     @State private var showInputAlert = false
     
+//    @FocusState private var emailFocused: Bool
+//    @FocusState private var passwordFocused: Bool
+    
+    @FocusState private var focusedField: FieldType?
+    
     var body: some View {
         Form {
             Section {
+                //prompt = placeholder
+                //TextField("Email", text: $email, prompt: Text("Input Email"))
+                TextField("Email", text: $email, prompt: nil)
+                    .textInputAutocapitalization(.never) //첫 문자 기본 대문자 해제
+                    .disableAutocorrection(true) //자동완성
+                    .focused($focusedField, equals: .Email)
+                    .submitLabel(.next)
+                    .onSubmit {
+//                        passwordFocused = true
+                        focusedField = .Password
+                    }
+                
+                TextField("Password", text: $password, prompt: nil)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+                    .focused($focusedField, equals: .Password)
+                    .submitLabel(.done)
+                    .onSubmit {
+                        if email.isEmpty {
+                            showInputAlert = true
+                        } else {
+                            showJoinAlert = true
+//                            emailFocused = false
+//                            passwordFocused = false
+                            focusedField = nil
+                        }
+                    }
                 
             }
             
@@ -41,6 +78,9 @@ struct TextField_Tutorials: View {
                         showInputAlert = true
                     } else {
                         showJoinAlert = true
+//                        emailFocused = false
+//                        passwordFocused = false
+                        focusedField = nil
                     }
                 } label: {
                     Text("회원가입")
@@ -48,7 +88,8 @@ struct TextField_Tutorials: View {
                 .frame(maxWidth: .infinity)
                 .alert("회원가입", isPresented: $showJoinAlert) {
                     Button {
-                        
+                        email = ""
+                        password = ""
                     } label: {
                         Text("확인")
                     }
@@ -57,13 +98,19 @@ struct TextField_Tutorials: View {
                 }
                 .alert("경고", isPresented: $showInputAlert) {
                     Button {
-                        
+//                        emailFocused = true
+                        focusedField = .Email
                     } label: {
                         Text("확인")
                     }
                 } message: {
                     Text("이메일을 입력해 주세요")
                 }
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+                focusedField = .Email
             }
         }
     }

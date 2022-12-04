@@ -37,6 +37,7 @@ struct FontStyles: View {
                 .font(.system(size: 40))
                 .italic()
             
+            //.underline() 와 .strikethrough() 는 active, color 파람을 가지고 있다.
             Text("Underline")
                 .font(.system(size: 40))
                 .underline()
